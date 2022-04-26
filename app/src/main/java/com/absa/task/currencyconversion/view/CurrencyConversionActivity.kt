@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.absa.task.currencyconversion.databinding.ActivityMainBinding
 import com.absa.task.currencyconversion.view.viewmodel.MainViewModel
 
-class MainActivity : AppCompatActivity() {
+class CurrencyConversionActivity : AppCompatActivity() {
 
     private lateinit var mainBinding: ActivityMainBinding
     private val viewModel: MainViewModel by viewModels()
@@ -18,10 +18,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
+        initListener()
+        observeConversionResult()
+        handleLoader()
     }
 
-    override fun onResume() {
-        super.onResume()
+    private fun initListener() {
         mainBinding.btnConvert.setOnClickListener {
             viewModel.convertCurrency(
                 mainBinding.etCurrencyFrom.text.toString(),
@@ -34,8 +36,6 @@ class MainActivity : AppCompatActivity() {
             ) as InputMethodManager
             imm.hideSoftInputFromWindow(mainBinding.root.windowToken, 0)
         }
-        observeConversionResult()
-        handleLoader()
     }
 
     private fun handleLoader() {

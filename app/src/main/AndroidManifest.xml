@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CurrencyConversion">
         <activity
-            android:name=".view.MainActivity"
+            android:name=".view.CurrencyConversionActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
