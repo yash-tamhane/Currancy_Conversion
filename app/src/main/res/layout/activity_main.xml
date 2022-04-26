@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+    <TextView
+        android:id="@+id/txtTittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/currency_conversion"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_tittle_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_Cv_From"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/cv_from_margin_start"
+        android:layout_marginTop="@dimen/cv_from_margin_top"
+        android:layout_marginEnd="@dimen/cv_from_margin_end"
+        android:text="@string/from"
+        android:textSize="@dimen/cv_from_text_size"
+        app:layout_constraintStart_toEndOf="@+id/tilFrom"
+        app:layout_constraintTop_toBottomOf="@+id/tilFrom" />
+
+    <TextView
+        android:id="@+id/txt_convert_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/cv_to_margin_top"
+        android:text="@string/to"
+        android:textSize="@dimen/cv_to_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/cvToCurrency"
+        app:layout_constraintStart_toStartOf="@+id/cvToCurrency"
+        app:layout_constraintTop_toBottomOf="@+id/tilFrom" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilFrom"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/input_area_margin_top"
+        android:hint="@string/amount"
+        app:layout_constraintEnd_toStartOf="@+id/txtTittle"
+        app:layout_constraintTop_toBottomOf="@+id/txtTittle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_currency_from"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/resultValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/result_value_margin_top"
+        app:layout_constraintStart_toEndOf="@id/btnConvert"
+        app:layout_constraintTop_toBottomOf="@+id/btnConvert">
+
+        <TextView
+            android:id="@+id/txt_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/result_text_size"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27" />
+
+    <Spinner
+        android:id="@+id/cvFromCurrency"
+        android:layout_width="@dimen/cv_from_currency_width"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/cv_from_currency_margin_end"
+        android:entries="@array/currency_codes"
+        android:padding="@dimen/cv_from_currency_padding"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@id/txt_Cv_From"
+        app:layout_constraintTop_toBottomOf="@+id/txt_Cv_From" />
+
+    <Spinner
+        android:id="@+id/cvToCurrency"
+        android:layout_width="@dimen/cv_to_currency_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/cv_to_currency_margin_start"
+        android:entries="@array/currency_codes"
+        android:padding="@dimen/cv_to_currency_padding"
+        app:layout_constraintBottom_toBottomOf="@+id/cvFromCurrency"
+        app:layout_constraintStart_toEndOf="@+id/cvFromCurrency"
+        app:layout_constraintTop_toBottomOf="@+id/txt_convert_to"
+        app:layout_constraintTop_toTopOf="@+id/cvFromCurrency"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnConvert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/convert_btn_margin_top"
+        android:text="@string/convert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvToCurrency" />
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/progress_bar_margin_start"
+        android:layout_marginTop="@dimen/progress_bar_margin_top"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@id/btnConvert"
+        app:layout_constraintLeft_toRightOf="@+id/btnConvert"
+        app:layout_constraintStart_toStartOf="@id/btnConvert"
+        app:layout_constraintTop_toBottomOf="@+id/btnConvert"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

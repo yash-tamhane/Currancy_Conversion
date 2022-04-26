@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cv_from_margin_top">16dp</dimen>
+    <dimen name="cv_from_margin_start">25dp</dimen>
+    <dimen name="cv_from_margin_end">20dp</dimen>
+    <dimen name="cv_from_text_size">15sp</dimen>
+    <dimen name="cv_to_margin_top">16dp</dimen>
+    <dimen name="cv_to_text_size">15sp</dimen>
+    <dimen name="input_area_margin_top">16dp</dimen>
+    <dimen name="result_value_margin_top">20dp</dimen>
+    <dimen name="result_text_size">25sp</dimen>
+    <dimen name="cv_from_currency_width">0dp</dimen>
+    <dimen name="cv_from_currency_margin_end">16dp</dimen>
+    <dimen name="cv_from_currency_padding">15dp</dimen>
+    <dimen name="cv_to_currency_width">0dp</dimen>
+    <dimen name="cv_to_currency_margin_start">128dp</dimen>
+    <dimen name="cv_to_currency_padding">15dp</dimen>
+    <dimen name="convert_btn_margin_top">16dp</dimen>
+    <dimen name="txt_tittle_text_size">35sp</dimen>
+    <dimen name="progress_bar_margin_start">180dp</dimen>
+    <dimen name="progress_bar_margin_top">124dp</dimen>
+</resources>
